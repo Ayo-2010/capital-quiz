@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capital Atlas · Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site-head">
+    <p class="kicker">Atlas quiz</p>
+    <h1>Capital Cities</h1>
+    <p class="sub">Over one hundred and eighty countries and territories, grouped by region. No flags, just geography.</p>
+  </header>
+
+  <section id="startScreen" class="panel">
+    <div class="panel-head">
+      <span class="plate">Sheet 01</span>
+      <h2>Set up a round</h2>
+    </div>
+    <div class="setup">
+      <label class="field">
+        <span>Region</span>
+        <select id="regionSelect">
+          <option value="World">World</option>
+          <option value="Africa">Africa</option>
+          <option value="Europe">Europe</option>
+          <option value="Asia">Asia</option>
+          <option value="Americas">Americas</option>
+          <option value="Oceania">Oceania</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>Questions</span>
+        <select id="lengthSelect">
+          <option value="5">5 questions</option>
+          <option value="10" selected>10 questions</option>
+          <option value="20">20 questions</option>
+        </select>
+      </label>
+    </div>
+    <button id="startBtn" class="btn" type="button">Start the round</button>
+    <p class="hint">Keyboard: press 1 to 4 to answer, Enter for the next question.</p>
+  </section>
+
+  <section id="quizScreen" class="panel" hidden>
+    <div class="hud">
+      <span id="round">Question 1 of 10</span>
+      <span id="score">Score 0</span>
+      <span id="streak">Streak 0</span>
+      <span id="timer" class="timer">15s</span>
+    </div>
+    <div class="progress"><span id="progress"></span></div>
+    <h2 id="question" class="question">Country</h2>
+    <div id="choices" class="choices"></div>
+    <div class="quiz-foot">
+      <p class="hint">Keys 1 to 4 choose a capital · Enter moves on once answered.</p>
+      <button id="nextBtn" class="btn" type="button" disabled>Next</button>
+    </div>
+  </section>
+
+  <section id="results" class="panel" hidden>
+    <div class="panel-head">
+      <span class="plate">Sheet 02</span>
+      <h2>Round complete</h2>
+    </div>
+    <p class="final">Final score <strong id="finalScore">0</strong></p>
+    <p id="best" class="best"></p>
+    <ol id="review" class="review"></ol>
+    <button id="playAgainBtn" class="btn" type="button">Play again</button>
+  </section>
+
+  <footer class="site-foot">
+    <p>Capitals follow common English usage. Some countries list their constitutional or administrative capital.</p>
+  </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
